@@ -1,0 +1,15 @@
+version: "3.3"
+services:
+  vera_frontend:
+    image: vera_frontend
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        REACT_APP_HTTP_ENDPOINT: https://5d2b144c.ngrok.io
+    volumes:
+      - .:/vera_frontend
+    ports:
+      - 3000:3000
+    expose:
+      - "3000"
